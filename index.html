@@ -8,6 +8,16 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="Rutina">
 <meta name="theme-color" content="#EDF0F3">
+<meta name="build" content="1791647178">
+<script>
+(function(){try{
+  var me=document.querySelector('meta[name=build]').content;
+  fetch(location.pathname+'?v='+Date.now(),{cache:'no-store'}).then(function(r){return r.text()}).then(function(t){
+    var m=t.match(/<meta name="build" content="(\d+)">/);
+    if(m&&m[1]!==me&&sessionStorage.getItem('rutina-reload')!==m[1]){sessionStorage.setItem('rutina-reload',m[1]);location.reload();}
+  }).catch(function(){});
+}catch(e){}})();
+</script>
 <link rel="apple-touch-icon" href="icon.png">
 <link rel="icon" href="icon.png">
 <style>
